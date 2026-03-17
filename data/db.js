@@ -4,7 +4,7 @@ const dbConfiguration = {
     host: "localhost",  //di default gira sulla porta localhost3306
     user: "root",
     password: "root",
-    database: "blog" //nome dello schema 
+    database: "film_list_db" //nome dello schema 
 };
 
 function onDatabaseConnection(error) {

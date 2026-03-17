@@ -8,13 +8,13 @@ app.use(express.json());
 const notFoundMiddleware = require('./middlewares/notFound');
 const errorsHandlerMiddleware = require('./middlewares/errorsHandler');
 
-
+const moviesRouter = require('./routers/filmsRouter')
 
 app.get('/', (req, res) => {
     res.send("Server dei film");
 });
 
-//app.use("/movies")
+app.use("/movies", moviesRouter)
 
 app.use(notFoundMiddleware);
 app.use(errorsHandlerMiddleware);
