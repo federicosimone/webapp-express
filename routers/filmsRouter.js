@@ -10,7 +10,7 @@ const filmsController = require('../controllers/filmsControllers')
 //cRud
 router.get('/', filmsController.index)
 //crUd
-
+router.get('/:id', filmsController.show)
 //cruD
 
 module.exports = router;
