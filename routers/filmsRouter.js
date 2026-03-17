@@ -7,10 +7,19 @@ const filmsController = require('../controllers/filmsControllers')
 
 //Crud
 
+//router.post('/', postcontroller.store)
+
 //cRud
 router.get('/', filmsController.index)
-//crUd
+
 router.get('/:id', filmsController.show)
+//crUd
+///router.put('/:id', filmsController.update)
+
+//router.patch('/:id', filmsController.modify)
+
 //cruD
+
+//router.delete('/:id', filmsController.destroy)
 
 module.exports = router;
