@@ -8,6 +8,7 @@ const filmsController = require('../controllers/filmsControllers')
 //Crud
 
 //router.post('/', postcontroller.store)
+router.post("/:id/reviews", filmsController.storeReview);
 
 //cRud
 router.get('/', filmsController.index)

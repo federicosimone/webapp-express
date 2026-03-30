@@ -54,11 +54,16 @@ function show(req, res) {
         });
     });
 
+};
+
+function storeReview(req, res) {
+    res.send("ok")
 }
 
 const funzioni = {
     index,
-    show
+    show,
+    storeReview,
 }
 
 module.exports = funzioni;
