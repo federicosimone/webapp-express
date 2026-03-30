@@ -57,7 +57,21 @@ function show(req, res) {
 };
 
 function storeReview(req, res) {
-    res.send("ok")
+
+    const { id } = req.params;
+    const { text, name, vote } = req.body;
+
+    console.log(id, text, name, vote);
+
+    const sqlQueryPostReview = "INSERT INTO reviews (name, vote, text, movie_id ) VALUES (?,?,?,?)"  //L' id del film (movie_id) lo recupero dal req. params, mentre il resto dal body
+    dbConnection.query(sqlQueryPostReview, [name, vote, text, id], (error, results) => {
+        if (error) {
+            return res.status(500).json({ error: "DB Error", message: err.message })
+        }
+        res.status(201).json({ id: results.insertId });   // con l' insertId aggiungo automaticamente un Id autogenerato progressivo
+    });
+
+
 }
 
 const funzioni = {
